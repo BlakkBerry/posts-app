@@ -8,16 +8,12 @@ import {MaterialModule} from './material/material.module';
 import {PostsComponent} from './posts/posts.component';
 import {GalleryComponent} from './gallery/gallery.component';
 import { HomepageComponent } from './homepage/homepage.component';
-import { HeaderComponent } from './shared/header/header.component';
-import { FooterComponent } from './shared/footer/footer.component';
-import { SidebarComponent } from './shared/sidebar/sidebar.component';
+import { HeaderComponent } from './shared/components/header/header.component';
+import { FooterComponent } from './shared/components/footer/footer.component';
+import { SidebarComponent } from './shared/components/sidebar/sidebar.component';
 import {FormsModule} from '@angular/forms';
-import { LayoutModule } from '@angular/cdk/layout';
-import { MatToolbarModule } from '@angular/material/toolbar';
-import { MatButtonModule } from '@angular/material/button';
-import { MatSidenavModule } from '@angular/material/sidenav';
-import { MatIconModule } from '@angular/material/icon';
-import { MatListModule } from '@angular/material/list';
+import {HttpClientModule} from '@angular/common/http';
+import { PostComponent } from './posts/post/post.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +23,8 @@ import { MatListModule } from '@angular/material/list';
     HomepageComponent,
     HeaderComponent,
     FooterComponent,
-    SidebarComponent
+    SidebarComponent,
+    PostComponent
   ],
   imports: [
     BrowserModule,
@@ -35,12 +32,7 @@ import { MatListModule } from '@angular/material/list';
     BrowserAnimationsModule,
     FormsModule,
     MaterialModule,
-    LayoutModule,
-    MatToolbarModule,
-    MatButtonModule,
-    MatSidenavModule,
-    MatIconModule,
-    MatListModule
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
