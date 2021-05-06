@@ -1,0 +1,18 @@
+<mat-sidenav-container>
+  <mat-sidenav #sidenav mode="over">
+    <mat-nav-list>
+      <a mat-list-item routerLink="">Home</a>
+      <a mat-list-item routerLink="/posts">Posts</a>
+      <a mat-list-item routerLink="/gallery">Gallery</a>
+      <a mat-list-item routerLink="/contact">Contact Us</a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <div class="side-opener">
+      <button mat-icon-button (click)="sidenav.toggle()">
+        <mat-icon>menu</mat-icon>
+      </button>
+    </div>
+    <ng-content></ng-content>
+  </mat-sidenav-content>
+</mat-sidenav-container>

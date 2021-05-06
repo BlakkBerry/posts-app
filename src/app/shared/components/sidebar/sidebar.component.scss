@@ -1,0 +1,34 @@
+mat-sidenav-container {
+  min-height: 100vh;
+}
+
+mat-sidenav, mat-sidenav-content {
+  padding: 16px;
+}
+
+mat-sidenav {
+  width: 200px;
+}
+
+mat-sidenav {
+  padding: 0;
+  background: #673ab7;
+
+  mat-nav-list {
+    a {
+      color: white;
+    }
+  }
+}
+
+.side-opener {
+  position: absolute;
+  left: 0;
+  background: #673ab7;
+  border-radius: 0 50% 50% 0;
+
+  mat-icon {
+    color: white;
+  }
+}
+

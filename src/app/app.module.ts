@@ -11,9 +11,11 @@ import { HomepageComponent } from './homepage/homepage.component';
 import { HeaderComponent } from './shared/components/header/header.component';
 import { FooterComponent } from './shared/components/footer/footer.component';
 import { SidebarComponent } from './shared/components/sidebar/sidebar.component';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import { PostComponent } from './posts/post/post.component';
+import { EditModalComponent } from './posts/post/edit-modal/edit-modal.component';
+import { CreateModalComponent } from './posts/post/create-modal/create-modal.component';
 
 @NgModule({
   declarations: [
@@ -24,13 +26,16 @@ import { PostComponent } from './posts/post/post.component';
     HeaderComponent,
     FooterComponent,
     SidebarComponent,
-    PostComponent
+    PostComponent,
+    EditModalComponent,
+    CreateModalComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     FormsModule,
+    ReactiveFormsModule,
     MaterialModule,
     HttpClientModule
   ],

@@ -1,0 +1,20 @@
+<div class="posts">
+  <h1 class="mat-headline">Posts
+    <button mat-mini-fab color="primary" class="add-post" (click)="openCreateModal()">
+      <mat-icon>add</mat-icon>
+    </button>
+  </h1>
+
+  <mat-spinner *ngIf="!posts.length" mode="indeterminate"></mat-spinner>
+
+  <mat-paginator [length]="posts.length"
+                 [pageSize]="pageSize"
+                 [pageSizeOptions]="pageSizeOptions"
+                 (page)="onPageChange($event)"
+  ></mat-paginator>
+  <mat-grid-list [cols]="breakpoint" rowHeight="300px" (window:resize)="onResize($event)">
+    <mat-grid-tile *ngFor="let post of pageSlice">
+      <app-post [post]="post" (delete)="deletePost($event)" (edit)="editPost($event)"></app-post>
+    </mat-grid-tile>
+  </mat-grid-list>
+</div>

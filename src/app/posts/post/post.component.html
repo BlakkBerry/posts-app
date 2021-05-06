@@ -1,0 +1,18 @@
+<mat-card class="card">
+  <mat-card-title class="card-title">
+    {{post.title}}
+  </mat-card-title>
+  <mat-card-content>
+    <p>
+      {{post.body}}
+    </p>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-mini-fab color="accent" class="manage-btn" (click)="openEditModal()">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <button mat-mini-fab color="warn" class="manage-btn" (click)="this.delete.emit(this.post.id)">
+      <mat-icon>delete</mat-icon>
+    </button>
+  </mat-card-actions>
+</mat-card>
