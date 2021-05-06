@@ -7,7 +7,7 @@
       <a mat-list-item routerLink="/contact">Contact Us</a>
     </mat-nav-list>
   </mat-sidenav>
-  <mat-sidenav-content>
+  <mat-sidenav-content [ngStyle]="{'background-color': backgroundColor}">
     <div class="side-opener">
       <button mat-icon-button (click)="sidenav.toggle()">
         <mat-icon>menu</mat-icon>

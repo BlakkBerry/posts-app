@@ -7,7 +7,7 @@
       {{post.body}}
     </p>
   </mat-card-content>
-  <mat-card-actions>
+  <mat-card-actions *ngIf="editable">
     <button mat-mini-fab color="accent" class="manage-btn" (click)="openEditModal()">
       <mat-icon>menu</mat-icon>
     </button>

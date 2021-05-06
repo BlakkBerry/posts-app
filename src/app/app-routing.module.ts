@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import {PostsComponent} from './posts/posts.component';
 import {GalleryComponent} from './gallery/gallery.component';
 import {HomepageComponent} from './homepage/homepage.component';
+import {ContactComponent} from './contact/contact.component';
 
 const routes: Routes = [
   {
@@ -16,6 +17,14 @@ const routes: Routes = [
   {
     path: 'gallery',
     component: GalleryComponent
+  },
+  {
+    path: 'contact',
+    component: ContactComponent
+  },
+  {
+    path: '**',
+    redirectTo: ''
   }
 ];
 

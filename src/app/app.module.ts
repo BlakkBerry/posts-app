@@ -16,6 +16,8 @@ import {HttpClientModule} from '@angular/common/http';
 import { PostComponent } from './posts/post/post.component';
 import { EditModalComponent } from './posts/post/edit-modal/edit-modal.component';
 import { CreateModalComponent } from './posts/post/create-modal/create-modal.component';
+import { PhotoComponent } from './gallery/photo/photo.component';
+import { ContactComponent } from './contact/contact.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +30,9 @@ import { CreateModalComponent } from './posts/post/create-modal/create-modal.com
     SidebarComponent,
     PostComponent,
     EditModalComponent,
-    CreateModalComponent
+    CreateModalComponent,
+    PhotoComponent,
+    ContactComponent
   ],
   imports: [
     BrowserModule,

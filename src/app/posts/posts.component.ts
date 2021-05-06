@@ -4,6 +4,7 @@ import {Post} from '../shared/types/Post';
 import {PageEvent} from '@angular/material/paginator';
 import {CreateModalComponent} from './post/create-modal/create-modal.component';
 import {MatDialog} from '@angular/material/dialog';
+import {StyleService} from '../shared/services/style.service';
 
 @Component({
   selector: 'app-posts',
@@ -18,16 +19,20 @@ export class PostsComponent implements OnInit {
   pageSize = 20;
   pageSizeOptions = [10, 20, 30];
   pageSlice: Array<Post> = [];
+  backgroundColor = '#e9fce5';
 
-  constructor(private postService: PostService, public dialog: MatDialog) {
-    postService.fetchPosts().subscribe(posts => {
-      this.posts = posts;
-      this.pageSlice = this.posts.slice(0, this.pageSize);
-    });
+  constructor(private postService: PostService, public dialog: MatDialog, private styleService: StyleService) {
   }
 
   ngOnInit(): void {
+    this.styleService.changeBackground(this.backgroundColor);
+
     this.breakpoint = (window.innerWidth <= 400) ? 1 : 4;
+
+    this.postService.fetchPosts().subscribe(posts => {
+      this.posts = posts;
+      this.pageSlice = this.posts.slice(0, this.pageSize);
+    });
   }
 
   onPageChange(event: PageEvent): any {

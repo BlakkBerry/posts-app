@@ -1,0 +1,13 @@
+.card {
+  max-width: 250px;
+  overflow-wrap: break-word;
+
+  .card-title {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .manage-btn {
+    margin-left: 15px;
+  }
+}

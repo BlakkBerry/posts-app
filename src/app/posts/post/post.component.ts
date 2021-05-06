@@ -11,6 +11,7 @@ import {EditModalComponent} from './edit-modal/edit-modal.component';
 export class PostComponent implements OnInit {
 
   @Input() post!: Post;
+  @Input() editable = false;
   @Output() delete = new EventEmitter<number>();
   @Output() edit = new EventEmitter<Post>();
 

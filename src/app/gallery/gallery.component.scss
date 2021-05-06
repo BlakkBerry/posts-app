@@ -1,0 +1,13 @@
+.gallery {
+  margin: 0 auto;
+
+  .mat-headline {
+    text-align: center;
+    font-size: 2rem;
+  }
+
+  mat-spinner {
+    margin: 0 auto;
+    transform: translateY(150%);
+  }
+}
