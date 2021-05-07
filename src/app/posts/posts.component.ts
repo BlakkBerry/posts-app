@@ -35,7 +35,7 @@ export class PostsComponent implements OnInit {
     });
   }
 
-  onPageChange(event: PageEvent): any {
+  onPageChange(event: PageEvent): void {
     const startIdx = event.pageIndex * event.pageSize;
     let endIdx = startIdx + event.pageSize;
     if (endIdx > this.posts.length) {
