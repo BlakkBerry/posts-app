@@ -13,7 +13,7 @@
                  (page)="onPageChange($event)"
                  [ngStyle]="{'background-color': backgroundColor}"
   ></mat-paginator>
-  <mat-grid-list [cols]="breakpoint" rowHeight="300px" (window:resize)="onResize($event)">
+  <mat-grid-list [cols]="breakpoint" rowHeight="300px" (window:resize)="setBreakpoint()">
     <mat-grid-tile *ngFor="let post of pageSlice">
       <app-post [post]="post" [editable]="true" (delete)="deletePost($event)" (edit)="editPost($event)"></app-post>
     </mat-grid-tile>

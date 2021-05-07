@@ -27,6 +27,8 @@ export class GalleryComponent implements OnInit {
   ngOnInit(): void {
     this.styleService.changeBackground(this.backgroundColor);
 
+    this.setBreakpoint();
+
     this.photoService.fetchPhotos(100).subscribe(photos => {
       this.photos = photos;
       this.pageSlice = this.photos.slice(0, this.pageSize);
@@ -42,19 +44,19 @@ export class GalleryComponent implements OnInit {
     this.pageSlice = this.photos.slice(startIdx, endIdx);
   }
 
-  onResize(event: any): void {
-    const width = event.target.innerWidth;
+  setBreakpoint(): void {
+    const width = window.innerWidth;
 
     if (width > 1200 && width < 2000) {
-      this.breakpoint = 5;
-    } else if (width > 768 && width < 1200) {
       this.breakpoint = 4;
-    } else if (width > 600 && width < 768) {
+    } else if (width > 768 && width < 1200) {
       this.breakpoint = 3;
-    } else if (event.target.innerWidth < 600) {
+    } else if (width > 600 && width < 768) {
+      this.breakpoint = 2;
+    } else if (width < 600) {
       this.breakpoint = 1;
     } else {
-      this.breakpoint = 6;
+      this.breakpoint = 5;
     }
   }
 

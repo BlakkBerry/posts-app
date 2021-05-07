@@ -9,7 +9,7 @@
                    (page)="onPageChange($event)"
                    [ngStyle]="{'background-color': backgroundColor}"
     ></mat-paginator>
-  <mat-grid-list rowHeight="300px" [cols]="breakpoint" (window:resize)="onResize($event)">
+  <mat-grid-list rowHeight="300px" [cols]="breakpoint" (window:resize)="setBreakpoint()">
     <mat-grid-tile *ngFor="let photo of pageSlice">
       <app-photo [photo]="photo"></app-photo>
     </mat-grid-tile>

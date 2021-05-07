@@ -27,7 +27,7 @@ export class PostsComponent implements OnInit {
   ngOnInit(): void {
     this.styleService.changeBackground(this.backgroundColor);
 
-    this.breakpoint = (window.innerWidth <= 400) ? 1 : 4;
+    this.setBreakpoint();
 
     this.postService.fetchPosts().subscribe(posts => {
       this.posts = posts;
@@ -44,8 +44,8 @@ export class PostsComponent implements OnInit {
     this.pageSlice = this.posts.slice(startIdx, endIdx);
   }
 
-  onResize(event: any): void {
-    const width = event.target.innerWidth;
+  setBreakpoint(): void {
+    const width = window.innerWidth;
 
     if (width > 1200 && width < 2000) {
       this.breakpoint = 4;
@@ -53,7 +53,7 @@ export class PostsComponent implements OnInit {
       this.breakpoint = 3;
     } else if (width > 600 && width < 768) {
       this.breakpoint = 2;
-    } else if (event.target.innerWidth < 600) {
+    } else if (width < 600) {
       this.breakpoint = 1;
     } else {
       this.breakpoint = 5;

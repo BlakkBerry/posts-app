@@ -3,7 +3,7 @@
 
   <mat-spinner *ngIf="!posts.length" mode="indeterminate"></mat-spinner>
 
-  <mat-grid-list [cols]="breakpoint" rowHeight="300px" (window:resize)="onResize($event)">
+  <mat-grid-list [cols]="breakpoint" rowHeight="300px" (window:resize)="setBreakpoint()">
     <mat-grid-tile *ngFor="let post of posts">
       <app-post [post]="post"></app-post>
     </mat-grid-tile>
@@ -15,7 +15,7 @@
 
   <mat-spinner *ngIf="!photos.length" mode="indeterminate"></mat-spinner>
 
-  <mat-grid-list [cols]="breakpoint" rowHeight="300px" (window:resize)="onResize($event)">
+  <mat-grid-list [cols]="breakpoint" rowHeight="300px" (window:resize)="setBreakpoint()">
     <mat-grid-tile *ngFor="let photo of photos">
       <app-photo [photo]="photo"></app-photo>
     </mat-grid-tile>

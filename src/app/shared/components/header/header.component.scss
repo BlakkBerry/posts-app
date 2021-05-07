@@ -1,5 +1,6 @@
 .navbar {
   justify-content: space-between;
+  overflow: hidden;
 
   .tab-links {
     height: 100%;
@@ -7,5 +8,15 @@
     button {
       height: 100%;
     }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .brand {
+    display: none;
+  }
+
+  .navbar {
+    justify-content: center;
   }
 }

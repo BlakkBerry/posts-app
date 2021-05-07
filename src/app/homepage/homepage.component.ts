@@ -24,12 +24,14 @@ export class HomepageComponent implements OnInit {
   ngOnInit(): void {
     this.styleService.changeBackground(this.backgroundColor);
 
+    this.setBreakpoint();
+
     this.postService.fetchPosts(10).subscribe(posts => this.posts = posts);
     this.photoService.fetchPhotos(10).subscribe(photos => this.photos = photos);
   }
 
-  onResize(event: any): void {
-    const width = event.target.innerWidth;
+  setBreakpoint(): void {
+    const width = window.innerWidth;
 
     if (width > 1200 && width < 2000) {
       this.breakpoint = 4;
@@ -37,7 +39,7 @@ export class HomepageComponent implements OnInit {
       this.breakpoint = 3;
     } else if (width > 600 && width < 768) {
       this.breakpoint = 2;
-    } else if (event.target.innerWidth < 600) {
+    } else if (width < 600) {
       this.breakpoint = 1;
     } else {
       this.breakpoint = 5;
